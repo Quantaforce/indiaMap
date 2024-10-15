@@ -1,0 +1,47 @@
+#root {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.tooltip{
+  position: absolute;
+  color: white;
+  padding: 10px;
+  background: hsl(0, 100%, 0%,.9);
+  pointer-events: none;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  display: none;
+  font-size: 12px;
+}
+.tooltip::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-top: 10px solid hsl(0, 100%, 0%,.9);
+}
+.map-con{
+  border: 1px solid black;
+  width: fit-content;
+  background: white;
+  box-shadow: 1px 1px 15px #000000;
+};
