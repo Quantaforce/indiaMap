@@ -13,7 +13,6 @@ function App() {
   const toolTip=useRef(null);
   const [zoomed,setZoomed]=useState(false);
   const [menu,setMenu]=useState('1');
-  const feature=useRef({strokecolor:'black',strokesize:'2',bgcolor:'green'})
   useEffect(()=>{
     const getGeoJson=async ()=>{
       try{
@@ -32,16 +31,15 @@ function App() {
   useEffect(()=>{
       if(geoData){
         if(menu=="1"){
-          drawMap(toolTip,geoData,'1',zoomed,setZoomed,feature);
+          drawMap(toolTip,geoData,'1',zoomed,setZoomed);
         }
         else if(menu=="2"){
-          drawMap(toolTip,districtData,'2',zoomed,setZoomed,feature);
+          drawMap(toolTip,districtData,'2',zoomed,setZoomed);
       }
     }
   },[geoData,menu,zoomed]);
   function changeBg(color) {
     d3.selectAll('path').attr('fill',color);
-    feature={...feature,bgcolor:color};
   }
   function changeStrokecolor(color) {
     d3.selectAll('path').attr('stroke',color);
